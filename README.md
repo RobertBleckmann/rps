@@ -1,13 +1,13 @@
 ﻿# RPS Vision
 
-Ein Computer-Vision-Projekt fÃ¼r **Schere-Stein-Papier** mit Webcam, MediaPipe Hand-Tracking und einem trainierbaren Klassifikationsmodell.
+Ein Computer-Vision-Projekt für **Schere-Stein-Papier** mit Webcam, MediaPipe Hand-Tracking und einem trainierbaren Klassifikationsmodell.
 
 ## Features
 
 - Hand-Landmark-Erkennung mit MediaPipe (`models/hand_landmarker.task`)
-- Datensammlung fÃ¼r Gesten (`r`, `p`, `s`)
+- Datensammlung für Gesten (`r`, `p`, `s`)
 - Training eines Klassifikators (scikit-learn Logistic Regression)
-- Live-Inferenz mit Glattung
+- Live-Inferenz mit Glättung
 - Spielmodus gegen CPU mit UI, Countdown und Score
 
 ## Wesentliche Technologien
@@ -21,7 +21,7 @@ Ein Computer-Vision-Projekt fÃ¼r **Schere-Stein-Papier** mit Webcam, MediaPipe
 
 - Python 3.12 (empfohlen)
 - Webcam
-- Windows (aktÃ¼ller Code nutzt `cv2.CAP_DSHOW`)
+- Windows (aktueller Code nutzt `cv2.CAP_DSHOW`)
 
 ## Installation
 
@@ -49,13 +49,13 @@ rps-vision/
 
 ## Schnellstart
 
-### 1) Samples aufnehmen (optional, fÃ¼r eigenes Training)
+### 1) Samples aufnehmen (optional, für eigenes Training)
 
 ```powershell
 python -m src.rps.capture
 ```
 
-SteÃ¼rung im Aufnahmefenster:
+Steuerung im Aufnahmefenster:
 - `r` = Rock
 - `p` = Paper
 - `s` = Scissors
@@ -85,14 +85,14 @@ python -m src.rps.infer
 python -m src.rps.game
 ```
 
-SteÃ¼rung im Spiel:
+Steürung im Spiel:
 - `Space` oder Klick auf **Start**: Runde starten
-- `R` oder Klick auf **Reset**: Score zurÃ¼cksetzen
+- `R` oder Klick auf **Reset**: Score zurücksetzen
 - `ESC`: Beenden
 
 ## Docker
 
-Image baÃ¼n:
+Image bauen:
 
 ```powershell
 docker build -t rps-vision .
@@ -104,12 +104,12 @@ Container starten (nutzt per Default `python -m src.rps.game`):
 docker run --rm -it rps-vision
 ```
 
-Hinweis: FÃ¼r Webcam-/GUI-Nutzung sind je nach Host-OS zusaetzliche Docker-Optionen erforderlich.
+Hinweis: Für Webcam-/GUI-Nutzung sind je nach Host-OS zusätzliche Docker-Optionen erforderlich.
 
 ## Troubleshooting
 
 - **`Could not open webcam`**: Kamera ist belegt oder Berechtigung fehlt.
-- **`Model not found: .../data/models/rps_model.joblib`**: zÃ¼rst `python -m src.rps.train` ausfÃ¼hren.
+- **`Model not found: .../data/models/rps_model.joblib`**: zuerst `python -m src.rps.train` ausführen.
 - **MediaPipe-Modell fehlt**: `models/hand_landmarker.task` muss vorhanden sein.
 
 
